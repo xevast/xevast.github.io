@@ -1,0 +1,4 @@
+const V='xevast-v2',F=["about.html", "academy.html", "ai.html", "blog-plan-website-budget.html", "blog-website-security-basics.html", "blog-what-is-vapt.html", "blog.html", "cloud.html", "contact.html", "index.html", "pricing.html", "privacy.html", "security.html", "services.html", "web.html", "work.html", "css/style.css", "js/main.js", "img/logo.png", "img/founder.jpg"];
+self.addEventListener('install',e=>e.waitUntil(caches.open(V).then(c=>c.addAll(F))));
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V).map(x=>caches.delete(x))))));
+self.addEventListener('fetch',e=>{if(e.request.method!=='GET')return;e.respondWith(fetch(e.request).then(r=>{const c=r.clone();caches.open(V).then(x=>x.put(e.request,c));return r}).catch(()=>caches.match(e.request).then(r=>r||caches.match('index.html'))))});
