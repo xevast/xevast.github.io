@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#050507">
+<title>Xevast Academy Console</title><link rel="icon" href="img/icon-192.png">
+<link rel="stylesheet" href="css/console.css"></head>
+<body>
+<section id="gate" class="gate"><div class="box">
+ <h1>Academy <b>Console</b></h1>
+ <p id="gateMsg" class="mu">Loading…</p>
+ <form id="loginForm" hidden autocomplete="on">
+  <label>Email<input id="em" type="email" autocomplete="username" required></label>
+  <label>Password<input id="pw" type="password" autocomplete="current-password" required></label>
+  <button class="btn" type="submit" id="loginBtn">Sign in</button>
+  <p class="mu" style="margin-top:12px">For Xevast Academy Admin and Academy Manager only. Your account is created by the Xevast admin.</p>
+ </form>
+ <button class="btn ghost" id="gateOut" hidden type="button">Sign out</button>
+ <p style="margin-top:14px"><a class="mu" href="index.html">← Academy site</a></p>
+</div></section>
+
+<div id="app" hidden>
+ <aside class="side"><div class="brand">Academy <b>Console</b></div>
+  <nav id="tabs"></nav>
+  <div class="who"><span id="whoEm"></span><span id="whoRole" class="tag"></span><button class="btn ghost sm" id="out" type="button">Sign out</button></div>
+ </aside>
+ <main id="main" tabindex="-1"></main>
+</div>
+<dialog id="dlg"><div id="dlgBody"></div><div class="dlg-x"><button class="btn ghost sm" id="dlgClose" type="button">Close</button></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="js/firebase-config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/console.js"></script>
+</body></html>
